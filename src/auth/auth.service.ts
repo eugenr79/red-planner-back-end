@@ -98,11 +98,11 @@ export class AuthService {
 	removeRefreshTokenToResponse(res: Response,) {		
 		res.cookie(this.REFRESH_TOKEN_NAME, '', {
 			httpOnly: true,
-			domain: 'localhost',
+			domain: process.env.SERVER_DOMAIN,
 			expires: new Date(0),
 			secure: true,
 			//lax if production
-			sameSite: 'none'
+			sameSite: 'lax'
 		})
 	}
 }
