@@ -89,9 +89,10 @@ export class AuthService {
 			//domain: 'localhost',
 			domain: process.env.SERVER_DOMAIN,
 			expires: expiresIn,
-			secure: true,
+			//secure: true,
 			//lax if production
-			sameSite: 'lax'
+			//sameSite: 'lax'
+			sameSite: 'strict'
 		})
 	}
 
@@ -100,9 +101,10 @@ export class AuthService {
 			httpOnly: true,
 			domain: process.env.SERVER_DOMAIN,
 			expires: new Date(0),
-			secure: true,
+			//secure: true,
 			//lax if production
-			sameSite: 'lax'
+			//sameSite: 'lax'
+			sameSite: 'strict'
 		})
 	}
 }
