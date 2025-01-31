@@ -86,11 +86,12 @@ export class AuthService {
 
 		res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
 			httpOnly: true,
-			domain: 'localhost',
+			//domain: 'localhost',
+			domain: process.env.SERVER_DOMAIN,
 			expires: expiresIn,
-			//secure: true,
+			secure: true,
 			//lax if production
-			sameSite: 'strict'
+			sameSite: 'lax'
 		})
 	}
 
